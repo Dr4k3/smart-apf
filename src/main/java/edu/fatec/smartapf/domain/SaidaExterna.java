@@ -1,6 +1,6 @@
 package edu.fatec.smartapf.domain;
 
-public class ConsultaExterna extends TipoFuncao {
+public class SaidaExterna extends TipoFuncao{
 
 	private Integer quantidadeDet;
 	private Integer quantidadeArquivosReferencia;
@@ -8,7 +8,7 @@ public class ConsultaExterna extends TipoFuncao {
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna
 	 */
-	public ConsultaExterna() {
+	public SaidaExterna() {
 
 	}
 	
@@ -17,7 +17,7 @@ public class ConsultaExterna extends TipoFuncao {
 	 * @param quantidadeDet
 	 * @param quantidadeArquivosReferencia
 	 */
-	public ConsultaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
+	public SaidaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
 		super();
 		this.quantidadeDet = quantidadeDet;
 		this.quantidadeArquivosReferencia = quantidadeArquivosReferencia;
