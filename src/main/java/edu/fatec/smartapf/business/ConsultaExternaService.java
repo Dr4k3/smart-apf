@@ -3,16 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.fatec.smartapf.calculo.ponto.funcao.calculos;
+package edu.fatec.smartapf.business;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import edu.fatec.smartapf.domain.ConsultaExterna;
+import edu.fatec.smartapf.domain.core.EntradaComplexidade;
+import edu.fatec.smartapf.domain.core.Range;
+import edu.fatec.smartapf.domain.core.enums.Complexidade;
 
 /**
  *
  * @author Silas
  */
-public class ConsultaExterna {
+@Service
+public class ConsultaExternaService {
 
     private static List<EntradaComplexidade> entradasComplexidade = new ArrayList<>();
 
@@ -30,7 +38,10 @@ public class ConsultaExterna {
         entradasComplexidade.add(new EntradaComplexidade(Complexidade.ALTA, new Range(3, Integer.MAX_VALUE), new Range(19, Integer.MAX_VALUE)));
     }
 
-    public static Complexidade determinarComplexidade(Integer qtdArqRef, Integer qtdDET) {
+    public Complexidade determinarComplexidade(ConsultaExterna param) {
+    	
+    	Integer qtdArqRef = param.getQuantidadeArquivosReferencia();
+    	Integer qtdDET = param.getQuantidadeDet();
         // Complexidade Padrão INDETERMINADA
         Complexidade complexidade = Complexidade.INDETERMINADA;
 
@@ -50,12 +61,13 @@ public class ConsultaExterna {
             }
         }
         // retornar a complexidade encontrada
+        param.setComplexidade(complexidade);
         return complexidade;
     }
 
-    public static void main(String args[]) {
-        System.out.println("Complexidade para o valor 5 " + determinarComplexidade(2, 10));
-    }
+//    public static void main(String args[]) {
+//        System.out.println("Complexidade para o valor 5 " + determinarComplexidade(2, 10));
+//    }
 
 }
 

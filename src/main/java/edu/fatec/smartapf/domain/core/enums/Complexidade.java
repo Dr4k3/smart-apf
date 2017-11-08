@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.fatec.smartapf.calculo.ponto.funcao.calculos;
+package edu.fatec.smartapf.domain.core.enums;
 
 /**
  *
