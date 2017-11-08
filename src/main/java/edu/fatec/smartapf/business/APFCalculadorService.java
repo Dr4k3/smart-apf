@@ -16,6 +16,7 @@ public class APFCalculadorService {
 		for (ConsultaExterna item : apf.getConsultasExternas()) {
 			consultaExternaService.determinarComplexidade(item);
 		}
+		apf.setTotalHoraProjeto(99);
 		return apf;
 	}
 
