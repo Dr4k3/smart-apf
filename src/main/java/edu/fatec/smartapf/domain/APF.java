@@ -10,7 +10,13 @@ import java.util.List;
 public class APF {
 	
 	private String projeto;
+	
 	private List<ConsultaExterna> consultasExternas;
+	private List<ArquivoInterfaceExterno> arquivosInterfaceExternos;
+	private List<ArquivoLogicoInterno> arquivosLogicosInternos;
+	private List<EntradaExterna> entradasExternas;
+	private List<SaidaExterna> saidasExternas;
+	
 	private Integer totalHoraProjeto;
 
 	/**
@@ -42,6 +48,38 @@ public class APF {
 
 	public void setTotalHoraProjeto(Integer totalHoraProjeto) {
 		this.totalHoraProjeto = totalHoraProjeto;
+	}
+
+	public List<ArquivoInterfaceExterno> getArquivosInterfaceExternos() {
+		return arquivosInterfaceExternos;
+	}
+
+	public void setArquivosInterfaceExternos(List<ArquivoInterfaceExterno> arquivosInterfaceExternos) {
+		this.arquivosInterfaceExternos = arquivosInterfaceExternos;
+	}
+
+	public List<ArquivoLogicoInterno> getArquivosLogicosInternos() {
+		return arquivosLogicosInternos;
+	}
+
+	public void setArquivosLogicosInternos(List<ArquivoLogicoInterno> arquivosLogicosInternos) {
+		this.arquivosLogicosInternos = arquivosLogicosInternos;
+	}
+
+	public List<EntradaExterna> getEntradasExternas() {
+		return entradasExternas;
+	}
+
+	public void setEntradasExternas(List<EntradaExterna> entradasExternas) {
+		this.entradasExternas = entradasExternas;
+	}
+
+	public List<SaidaExterna> getSaidasExternas() {
+		return saidasExternas;
+	}
+
+	public void setSaidasExternas(List<SaidaExterna> saidasExternas) {
+		this.saidasExternas = saidasExternas;
 	}
 
 }

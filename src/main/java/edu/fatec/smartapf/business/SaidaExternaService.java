@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import edu.fatec.smartapf.domain.APF;
-import edu.fatec.smartapf.domain.ConsultaExterna;
+import edu.fatec.smartapf.domain.SaidaExterna;
 import edu.fatec.smartapf.domain.core.EntradaComplexidade;
 import edu.fatec.smartapf.domain.core.Range;
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
@@ -21,7 +21,7 @@ import edu.fatec.smartapf.domain.core.enums.Complexidade;
  * @author Silas
  */
 @Service
-public class ConsultaExternaService {
+public class SaidaExternaService {
 
     private static List<EntradaComplexidade> entradasComplexidade = new ArrayList<>();
 
@@ -39,7 +39,7 @@ public class ConsultaExternaService {
         entradasComplexidade.add(new EntradaComplexidade(Complexidade.ALTA, new Range(3, Integer.MAX_VALUE), new Range(19, Integer.MAX_VALUE)));
     }
 
-    public Complexidade determinarComplexidade(ConsultaExterna param) {
+    public Complexidade determinarComplexidade(SaidaExterna param) {
     	
     	Integer qtdArqRef = param.getQuantidadeArquivosReferencia();
     	Integer qtdDET = param.getQuantidadeDet();
@@ -66,13 +66,11 @@ public class ConsultaExternaService {
         return complexidade;
     }
 
-	public void calcular(APF apf) {
-		for (ConsultaExterna item : apf.getConsultasExternas()) {
+    public void calcular(APF apf) {
+		for (SaidaExterna item : apf.getSaidasExternas()) {
 			determinarComplexidade(item);
 		}
 	}
-
-
 }
 
 
