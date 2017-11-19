@@ -3,6 +3,12 @@ package edu.fatec.smartapf.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.fatec.smartapf.domain.tipodado.ArquivoInterfaceExterno;
+import edu.fatec.smartapf.domain.tipodado.ArquivoLogicoInterno;
+import edu.fatec.smartapf.domain.transacao.ConsultaExterna;
+import edu.fatec.smartapf.domain.transacao.EntradaExterna;
+import edu.fatec.smartapf.domain.transacao.SaidaExterna;
+
 /**
  * @author Silas
  *

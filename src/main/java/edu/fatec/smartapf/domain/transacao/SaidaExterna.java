@@ -1,6 +1,8 @@
-package edu.fatec.smartapf.domain;
+package edu.fatec.smartapf.domain.transacao;
 
-public class ConsultaExterna extends TipoFuncao {
+import edu.fatec.smartapf.domain.core.Funcao;
+
+public class SaidaExterna extends Funcao{
 
 	private Integer quantidadeDet;
 	private Integer quantidadeArquivosReferencia;
@@ -8,7 +10,7 @@ public class ConsultaExterna extends TipoFuncao {
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna
 	 */
-	public ConsultaExterna() {
+	public SaidaExterna() {
 
 	}
 	
@@ -17,7 +19,7 @@ public class ConsultaExterna extends TipoFuncao {
 	 * @param quantidadeDet
 	 * @param quantidadeArquivosReferencia
 	 */
-	public ConsultaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
+	public SaidaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
 		super();
 		this.quantidadeDet = quantidadeDet;
 		this.quantidadeArquivosReferencia = quantidadeArquivosReferencia;
@@ -38,5 +40,13 @@ public class ConsultaExterna extends TipoFuncao {
 	public Integer getQuantidadeDet() {
 		return this.quantidadeDet;
 	}
+
+	@Override
+	public Integer getQtdPontoFuncao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 
 }

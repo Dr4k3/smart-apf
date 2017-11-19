@@ -1,6 +1,8 @@
-package edu.fatec.smartapf.domain;
+package edu.fatec.smartapf.domain.transacao;
 
-public class ArquivoLogicoInterno extends TipoFuncao {
+import edu.fatec.smartapf.domain.core.Funcao;
+
+public class ConsultaExterna extends Funcao {
 
 	private Integer quantidadeDet;
 	private Integer quantidadeArquivosReferencia;
@@ -8,7 +10,7 @@ public class ArquivoLogicoInterno extends TipoFuncao {
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna
 	 */
-	public ArquivoLogicoInterno() {
+	public ConsultaExterna() {
 
 	}
 	
@@ -17,7 +19,7 @@ public class ArquivoLogicoInterno extends TipoFuncao {
 	 * @param quantidadeDet
 	 * @param quantidadeArquivosReferencia
 	 */
-	public ArquivoLogicoInterno(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
+	public ConsultaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
 		super();
 		this.quantidadeDet = quantidadeDet;
 		this.quantidadeArquivosReferencia = quantidadeArquivosReferencia;
@@ -37,6 +39,12 @@ public class ArquivoLogicoInterno extends TipoFuncao {
 
 	public Integer getQuantidadeDet() {
 		return this.quantidadeDet;
+	}
+
+	@Override
+	public Integer getQtdPontoFuncao() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

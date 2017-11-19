@@ -11,10 +11,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import edu.fatec.smartapf.domain.APF;
-import edu.fatec.smartapf.domain.ConsultaExterna;
 import edu.fatec.smartapf.domain.core.EntradaComplexidade;
 import edu.fatec.smartapf.domain.core.Range;
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
+import edu.fatec.smartapf.domain.transacao.ConsultaExterna;
 
 /**
  *

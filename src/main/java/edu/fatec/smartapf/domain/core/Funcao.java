@@ -1,15 +1,15 @@
-package edu.fatec.smartapf.domain;
+package edu.fatec.smartapf.domain.core;
 
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
 
-public class TipoFuncao {
+public abstract class Funcao {
 
 	private Complexidade complexidade;
 
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna
 	 */
-	public TipoFuncao() {
+	public Funcao() {
 
 	}
 	
@@ -20,4 +20,11 @@ public class TipoFuncao {
 	public void setComplexidade(Complexidade complexidade) {
 		this.complexidade = complexidade;
 	}
+	
+	/**
+	 * Calcula a quantidade de pontos de função em que a função contribui
+	 * @return
+	 */
+	public abstract Integer getQtdPontoFuncao();
+
 }

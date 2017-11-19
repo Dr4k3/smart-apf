@@ -1,6 +1,8 @@
-package edu.fatec.smartapf.domain;
+package edu.fatec.smartapf.domain.transacao;
 
-public class SaidaExterna extends TipoFuncao{
+import edu.fatec.smartapf.domain.core.Funcao;
+
+public class EntradaExterna extends Funcao {
 
 	private Integer quantidadeDet;
 	private Integer quantidadeArquivosReferencia;
@@ -8,7 +10,7 @@ public class SaidaExterna extends TipoFuncao{
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna
 	 */
-	public SaidaExterna() {
+	public EntradaExterna() {
 
 	}
 	
@@ -17,10 +19,15 @@ public class SaidaExterna extends TipoFuncao{
 	 * @param quantidadeDet
 	 * @param quantidadeArquivosReferencia
 	 */
-	public SaidaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
+	public EntradaExterna(Integer quantidadeDet, Integer quantidadeArquivosReferencia) {
 		super();
 		this.quantidadeDet = quantidadeDet;
 		this.quantidadeArquivosReferencia = quantidadeArquivosReferencia;
+	}
+
+	@Override
+	public Integer getQtdPontoFuncao() {
+		return null;
 	}
 
 	public void setQuantidadeDet(Integer quantidadeDet) {
