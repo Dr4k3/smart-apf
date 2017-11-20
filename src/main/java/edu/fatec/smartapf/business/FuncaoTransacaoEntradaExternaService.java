@@ -21,30 +21,30 @@ import edu.fatec.smartapf.domain.transacao.ConsultaExterna;
  * @author Silas
  */
 @Service
-public class FuncaoTransacaoService {
+public class FuncaoTransacaoEntradaExternaService {
 
 	private static final Range MENOR_QUE_2 = new Range(0, 1);
-	private static final Range ENTRE_2_3 = new Range(2, 3);
-	private static final Range MAIOR_QUE_3 = new Range(3, Integer.MAX_VALUE);
+	private static final Range DOIS = new Range(2, 2);
+	private static final Range MAIOR_QUE_2 = new Range(3, Integer.MAX_VALUE);
 
-	private static final Range MENOR_QUE_6 = new Range(0, 5); 
-	private static final Range ENTRE_6_19 = new Range(6, 19);
-    private static final Range MAIOR_19 = new Range(19, Integer.MAX_VALUE);
+	private static final Range MENOR_QUE_5 = new Range(0, 4); 
+	private static final Range ENTRE_5_E_15 = new Range(5, 15);
+    private static final Range MAIOR_15 = new Range(16, Integer.MAX_VALUE);
     
 	private static List<EntradaComplexidade> MATRIZ_COMPLEXIDADE = new ArrayList<>();
 
     static {
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, MENOR_QUE_2, MENOR_QUE_6));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, MENOR_QUE_2, ENTRE_6_19));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, ENTRE_2_3, MENOR_QUE_6));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, MENOR_QUE_2, MENOR_QUE_5));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, MENOR_QUE_2, ENTRE_5_E_15));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, DOIS, MENOR_QUE_5));
 
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MENOR_QUE_2, MAIOR_19));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, ENTRE_2_3, ENTRE_6_19));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MAIOR_QUE_3, MENOR_QUE_6));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MENOR_QUE_2, MAIOR_15));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, DOIS, ENTRE_5_E_15));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MAIOR_QUE_2, MENOR_QUE_5));
 
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, ENTRE_2_3, MAIOR_19));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MAIOR_QUE_3, ENTRE_6_19));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MAIOR_QUE_3, MAIOR_19));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, DOIS, MAIOR_15));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MAIOR_QUE_2, ENTRE_5_E_15));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MAIOR_QUE_2, MAIOR_15));
     }
 
     public Complexidade determinarComplexidade(ConsultaExterna param) {

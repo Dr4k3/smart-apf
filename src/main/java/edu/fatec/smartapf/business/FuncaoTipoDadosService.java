@@ -23,28 +23,28 @@ import edu.fatec.smartapf.domain.tipodado.FuncaoTipoDado;
 @Service
 public class FuncaoTipoDadosService {
 
-	private static final Range UP_TO_1 = new Range(0, 1);
-	private static final Range _2_TO_5 = new Range(2, 5);
-	private static final Range MORE_THAN_5 = new Range(6, Integer.MAX_VALUE);
+	private static final Range ATE_1 = new Range(0, 1);
+	private static final Range ENTRE_2_E_5 = new Range(2, 5);
+	private static final Range MAIOR_QUE_5 = new Range(6, Integer.MAX_VALUE);
 	
-	private static final Range LESS_THAN_20 = new Range(0, 19);
-	private static final Range _20_TO_50 = new Range(20, 50);
-	private static final Range MORE_THAN_50 = new Range(51, Integer.MAX_VALUE);
+	private static final Range MENOR_QUE_20 = new Range(0, 19);
+	private static final Range ENTRE_20_E_50 = new Range(20, 50);
+	private static final Range MAIOR_QUE_50 = new Range(51, Integer.MAX_VALUE);
 	
 	private static List<EntradaComplexidade> MATRIZ_COMPLEXIDADE = new ArrayList<>();
 
     static {
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, UP_TO_1, LESS_THAN_20));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, UP_TO_1, _20_TO_50));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, UP_TO_1, MORE_THAN_50));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, _2_TO_5, LESS_THAN_20));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, ATE_1, 		 MENOR_QUE_20));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, ATE_1, 		 ENTRE_20_E_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, ATE_1, 		 MAIOR_QUE_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.BAIXA, ENTRE_2_E_5, MENOR_QUE_20));
 
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, _2_TO_5, _20_TO_50));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MORE_THAN_5, LESS_THAN_20));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, ENTRE_2_E_5, ENTRE_20_E_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.MEDIA, MAIOR_QUE_5, MENOR_QUE_20));
 
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, _2_TO_5, MORE_THAN_50));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MORE_THAN_5, _20_TO_50));
-        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MORE_THAN_5, MORE_THAN_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA,  ENTRE_2_E_5, MAIOR_QUE_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA,  MAIOR_QUE_5, ENTRE_20_E_50));
+        MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA,  MAIOR_QUE_5, MAIOR_QUE_50));
     }
 
     public Complexidade determinarComplexidade(FuncaoTipoDado param) {
