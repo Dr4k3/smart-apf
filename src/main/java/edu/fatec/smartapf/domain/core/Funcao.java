@@ -5,6 +5,11 @@ import edu.fatec.smartapf.domain.core.enums.Complexidade;
 public abstract class Funcao {
 
 	private Complexidade complexidade;
+	private Integer qtdPontoFuncao;
+
+	public void setQtdPontoFuncao(Integer qtdPontoFuncao) {
+		this.qtdPontoFuncao = qtdPontoFuncao;
+	}
 
 	/**
 	 * Construtor de objetos do tipo ConsultaExterna

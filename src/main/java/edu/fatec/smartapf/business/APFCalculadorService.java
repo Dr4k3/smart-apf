@@ -9,22 +9,13 @@ import edu.fatec.smartapf.domain.APF;
 public class APFCalculadorService {
 	
 	@Autowired
-	private ConsultaExternaService consultaExternaService;
+	private FuncaoTransacaoService funcaoTransacaoService;
 	@Autowired
-	private ArquivoInterfaceExternoService arquivoInterfaceExternoService;
-	@Autowired
-	private ArquivoLogicoInternoService arquivoLogicoInternoService;
-	@Autowired
-	private EntradaExternaService entradaExternaService;
-	@Autowired
-	private SaidaExternaService saidaExternaService;
+	private FuncaoTipoDadosService tipoDadosService;
 	
 	public APF calcular(APF apf) {
-		consultaExternaService.calcular(apf);
-		arquivoInterfaceExternoService.calcular(apf);
-		arquivoLogicoInternoService.calcular(apf);
-		entradaExternaService.calcular(apf);
-		saidaExternaService.calcular(apf);
+		funcaoTransacaoService.calcular(apf);
+		tipoDadosService.calcular(apf);
 		apf.setTotalHoraProjeto(99);
 		return apf;
 	}

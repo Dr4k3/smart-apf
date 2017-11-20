@@ -17,9 +17,10 @@ public class APF {
 	
 	private String projeto;
 	
-	private List<ConsultaExterna> consultasExternas;
 	private List<ArquivoInterfaceExterno> arquivosInterfaceExternos;
 	private List<ArquivoLogicoInterno> arquivosLogicosInternos;
+	
+	private List<ConsultaExterna> consultasExternas;
 	private List<EntradaExterna> entradasExternas;
 	private List<SaidaExterna> saidasExternas;
 	

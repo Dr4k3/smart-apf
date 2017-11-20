@@ -14,14 +14,14 @@ import edu.fatec.smartapf.domain.APF;
 import edu.fatec.smartapf.domain.core.EntradaComplexidade;
 import edu.fatec.smartapf.domain.core.Range;
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
-import edu.fatec.smartapf.domain.transacao.SaidaExterna;
+import edu.fatec.smartapf.domain.transacao.ConsultaExterna;
 
 /**
  *
  * @author Silas
  */
 @Service
-public class SaidaExternaService {
+public class FuncaoTransacaoService {
 
     private static List<EntradaComplexidade> entradasComplexidade = new ArrayList<>();
 
@@ -39,7 +39,7 @@ public class SaidaExternaService {
         entradasComplexidade.add(new EntradaComplexidade(Complexidade.ALTA, new Range(3, Integer.MAX_VALUE), new Range(19, Integer.MAX_VALUE)));
     }
 
-    public Complexidade determinarComplexidade(SaidaExterna param) {
+    public Complexidade determinarComplexidade(ConsultaExterna param) {
     	
     	Integer qtdArqRef = param.getQuantidadeArquivosReferencia();
     	Integer qtdDET = param.getQuantidadeDet();
@@ -66,11 +66,13 @@ public class SaidaExternaService {
         return complexidade;
     }
 
-    public void calcular(APF apf) {
-		for (SaidaExterna item : apf.getSaidasExternas()) {
+	public void calcular(APF apf) {
+		for (ConsultaExterna item : apf.getConsultasExternas()) {
 			determinarComplexidade(item);
 		}
 	}
+
+
 }
 
 
