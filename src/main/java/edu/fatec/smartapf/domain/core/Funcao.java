@@ -1,5 +1,7 @@
 package edu.fatec.smartapf.domain.core;
 
+import java.util.Map;
+
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
 
 public abstract class Funcao {
@@ -26,10 +28,19 @@ public abstract class Funcao {
 		this.complexidade = complexidade;
 	}
 	
-	/**
-	 * Calcula a quantidade de pontos de função em que a função contribui
-	 * @return
-	 */
-	public abstract Integer getQtdPontoFuncao();
+	public abstract Map<Complexidade, Integer> getMatrizContribuicao();
+	
+	public Integer getQtdPontoFuncao() {
+		Complexidade complexidade = getComplexidade();
+		Map<Complexidade, Integer> matrizContribuicao = getMatrizContribuicao();
+		if (complexidade == null) {
+			throw new APFException("Complexida não determinada");
+		}
+		if (matrizContribuicao == null) {
+			throw new APFException("Matriz Contribuição não determinada");
+		}
+		this.qtdPontoFuncao = matrizContribuicao.get(complexidade);
+		return this.qtdPontoFuncao;
+	}
 
 }
