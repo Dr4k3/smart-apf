@@ -3,12 +3,11 @@ package edu.fatec.smartapf.domain.tipodado;
 import java.util.HashMap;
 import java.util.Map;
 
-import edu.fatec.smartapf.domain.core.APFException;
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
 
 public class ArquivoInterfaceExterno extends FuncaoTipoDado {
 
-	private static final Map<Complexidade, Integer> CONTRIBUICAO = new HashMap<>();
+	private transient static final Map<Complexidade, Integer> CONTRIBUICAO = new HashMap<>();
 	static {
 		CONTRIBUICAO.put(Complexidade.INDETERMINADA, 0);
 		CONTRIBUICAO.put(Complexidade.BAIXA, 5);

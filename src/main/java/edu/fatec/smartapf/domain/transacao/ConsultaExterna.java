@@ -7,7 +7,7 @@ import edu.fatec.smartapf.domain.core.enums.Complexidade;
 
 public class ConsultaExterna extends FuncaoTransacao {
 
-	private static final Map<Complexidade, Integer> CONTRIBUICAO = new HashMap<>();
+	private transient static final Map<Complexidade, Integer> CONTRIBUICAO = new HashMap<>();
 	static {
 		CONTRIBUICAO.put(Complexidade.INDETERMINADA, 0);
 		CONTRIBUICAO.put(Complexidade.BAIXA, 3);

@@ -15,6 +15,9 @@ import edu.fatec.smartapf.domain.core.EntradaComplexidade;
 import edu.fatec.smartapf.domain.core.Range;
 import edu.fatec.smartapf.domain.core.enums.Complexidade;
 import edu.fatec.smartapf.domain.transacao.ConsultaExterna;
+import edu.fatec.smartapf.domain.transacao.EntradaExterna;
+import edu.fatec.smartapf.domain.transacao.FuncaoTransacao;
+import edu.fatec.smartapf.domain.transacao.SaidaExterna;
 
 /**
  *
@@ -47,7 +50,7 @@ public class FuncaoTransacaoService {
         MATRIZ_COMPLEXIDADE.add(new EntradaComplexidade(Complexidade.ALTA, MAIOR_QUE_3, MAIOR_19));
     }
 
-    public Complexidade determinarComplexidade(ConsultaExterna param) {
+    public Complexidade determinarComplexidade(FuncaoTransacao param) {
     	
     	Integer qtdArquivosRef = param.getQtdArquivosReferenciados();
     	Integer qtdTiposDados = param.getQtdTiposDados();
@@ -76,6 +79,12 @@ public class FuncaoTransacaoService {
 
 	public void calcular(APF apf) {
 		for (ConsultaExterna item : apf.getConsultasExternas()) {
+			determinarComplexidade(item);
+		}
+		for (EntradaExterna item : apf.getEntradasExternas()) {
+			determinarComplexidade(item);
+		}
+		for (SaidaExterna item : apf.getSaidasExternas()) {
 			determinarComplexidade(item);
 		}
 	}
